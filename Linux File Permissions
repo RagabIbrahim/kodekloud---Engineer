@@ -1,0 +1,7 @@
+Also login to server
+$ ssh tony@stapp01
+$ sudo su -
+# ls -ltr /tmp/xfusioncorp.sh    // check file permission
+# chmod o+rx /tmp/xfusioncorp.sh   // change permission for other
+# cat /tmp/xfusioncorp.sh          // show file data
+#ls -lrt /tmp/xfusioncorp.sh       // check permission changes

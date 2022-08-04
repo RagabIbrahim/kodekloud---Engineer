@@ -1,0 +1,10 @@
+first login to server everyone alone and run commands
+# ssh steve@stapp02        // login to server
+# sudo su -
+# timedatectl              // check time now
+# timedatectl -h           // get help to write command
+# timedatectl set-timezone America/Blanc-Sablon          // append city which target
+# timedatectl              // check time now for city
+
+
+finaly do this for all servers

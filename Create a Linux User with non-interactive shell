@@ -1,0 +1,7 @@
+Also login to server
+$ ssh tony@stapp01
+$ sudo su -
+# id ammar                  // check if user exist or not
+# adduser ammar  -s /sbin/nologin    // Add user to users
+# id ammar                  // check now if it is exist and has uid
+# cat /etc/passwd |grep ammar  // show info about user

@@ -1,0 +1,12 @@
+$ ssh peter@stdb01       // login to server with pass : Sp!dy
+$ sudo su -              // to apply command no need to write sudo before every command
+
+# systemctl status mariadb  // chck db status
+# systemctl start  mariadb
+
+# chown mysql:mysql /var/run/mariadb/     // run this command
+
+# systemctl status mariadb  // chck again
+# systemctl start  mariadb
+
+Done

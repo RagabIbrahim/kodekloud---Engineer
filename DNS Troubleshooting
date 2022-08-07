@@ -1,0 +1,9 @@
+$ ssh tony@stapp01 ## AppServer 1 Pass= Ir0nM@n   // login to server
+$ sudo su -
+
+# cat /etc/resolv.conf     // Verify the existing  resolve.conf file 
+# vi /etc/resolv.conf     //  edit the  resolv.conf  file and add public DNS 8.8.8.8 as per task.
+
+# cat /etc/resolv.conf    //  check it is DNS added
+
+// complete

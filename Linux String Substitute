@@ -1,0 +1,10 @@
+$ ssh clint@stbkp01              // login  to server with pass H@wk3y3
+$ sudo su -
+
+# cat /root/nautilus.xml  |grep Random  | wc -l    //  count number of word "Random"
+# cat /root/nautilus.xml  |grep Random             //  show word "Random" in file
+
+# sed -i 's/Random/Marine/g' /root/nautilus.xml    //  replace word "Random"  with word "Marine"
+
+# cat /root/nautilus.xml  |grep Marine  | wc -l    // check now count of "Marine"
+# cat /root/nautilus.xml  |grep Marine             //  show word "Marine" in file

@@ -1,0 +1,14 @@
+log in to the 3 servers
+$ ssh tony@stapp01     
+$ ssh steve@stapp02
+$ ssh banner@stapp03
+
+$ sudo su -
+# yum install cronie -y          // install package
+# systemctl start crond.service  // run service
+# systemctl status crond.service // check status
+
+# crontab -e                     // open file and add  */5 * * * * echo hello > /tmp/cron_text
+close vi type :wq
+
+# crontab -l                // check jop done

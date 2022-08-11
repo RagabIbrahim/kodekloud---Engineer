@@ -1,0 +1,7 @@
+$ ssh banner@stapp03   // login to server
+$ sudo su -
+
+# adduser kirsty      // create user
+# chage -E 2021-02-17 kirsty   // add expiry date
+
+# chage -l kirsty     // check details

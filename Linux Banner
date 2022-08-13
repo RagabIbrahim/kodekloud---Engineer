@@ -1,0 +1,21 @@
+$ ll -lsd /home/thor/nautilus_banner                 // check file
+
+$ ssh peter@stdb01                                  // login to server and 
+# sudo yum install openssh-clients -y               // install package
+
+// before login to any server run commands
+$ sudo scp -r  /home/thor/nautilus_banner tony@stapp01:/home/tony
+$ sudo scp -r  /home/thor/nautilus_banner steve@stapp02:/home/steve 
+$ sudo scp -r  /home/thor/nautilus_banner banner@stapp03:/home/banner
+$ sudo scp -r  /home/thor/nautilus_banner peter@stdb01:/home/peter
+
+// then login to every server alone 
+$ ssh tony@stapp01
+$ ssh steve@stapp02
+$ ssh banner@stapp03
+$ ssh peter@stdb01 
+
+// then run command 
+# sudo mv nautilus_banner /etc/motd      // on every server
+
+// try to login again for every server and the commands runs

@@ -1,0 +1,19 @@
+first login to all servers in 3 terminal
+$  ssh tony@stapp01   
+$  ssh steve@stapp02
+$  ssh banner@stapp03
+
+then run root user run command
+$ sudo su -
+
+# systemctl get-default    // check default run level
+
+# systemctl set-default graphical.target   // change run level to graphical.target
+
+# systemctl status graphical.traget    // check the status
+
+# systemctl start graphical.target     // start graphical.target
+
+# systemctl status graphical.target   // check status now
+
+# systemctl get-default               // check default now

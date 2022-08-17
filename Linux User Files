@@ -1,0 +1,13 @@
+$ ssh steve@stapp02      // login to server 2
+$ sudo su -
+
+# ll /home/usersdata/    // list the files in this dir
+# ll /ecommerce/         // list files in this dir  which i will copy files from /home/usersdata/ to here
+
+# find /home/usersdata/ -type f -user kirsty |wc -l     // count files
+
+# find /home/usersdata/ -type f -user kirsty -exec cp --parents {} /ecommerce \;    /// copy files to ecommerce
+
+# ll /media/home/usersdata/    // list files again and check   
+
+// task done

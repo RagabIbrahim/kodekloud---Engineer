@@ -1,0 +1,16 @@
+$ ssh banner@stapp03
+
+$  sudo su -
+
+# mkdir -p /dbadmin/data          // chreate directory
+
+# ll -lsd /dbadmin/data            // list file
+
+# chgrp -R dbadmin  /dbadmin/data   // Add to group
+
+# chmod -R 2770 /dbadmin/data       // change permission
+
+# ll -lsd /dbadmin/data
+
+
+

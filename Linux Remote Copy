@@ -1,0 +1,12 @@
+// copy files remote to the specified place
+$ scp /tmp/nautilus.txt.gpg banner@stapp03:/home/nfsshare/
+
+$ ssh banner@stapp03               // login to banner
+$ sudo su -
+
+# ls -la /home/                       //  list /home
+# sudo chown -R banner:banner /home/    //  change owner to banner
+
+# ls -la /home/
+# cd /home/nfsshare/
+# ls

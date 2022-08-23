@@ -1,0 +1,15 @@
+// login to the three servers
+
+$ ssh tony@stapp01
+$ ssh steve@stapp02
+$ ssh banner@stapp03
+
+$ sudo su -     // run root
+
+# yum install   squid -y    // install package
+
+# systemctl  start  squid    //  start package
+
+# systemctl  enable  squid   // enable
+
+# systemctl status  squid    // check status

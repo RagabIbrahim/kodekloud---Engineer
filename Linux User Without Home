@@ -1,0 +1,12 @@
+// login to server
+$ ssh steve@stapp02
+$ sudo su -
+
+# id ammar    // check user exist
+# cat /etc/passwd |grep ammar    //  check user found
+
+# useradd -M ammar         // create user ammar
+
+# id ammar    // check user exist
+# cat /etc/passwd |grep ammar    //  check user found
+# ll /home

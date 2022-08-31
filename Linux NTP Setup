@@ -1,0 +1,27 @@
+3.pool.ntp.org
+
+// first login to server
+$ ssh tony@stapp01
+$ sudo su -
+
+// check ntp installed 
+# rpm -qa |grep ntp
+// install it
+# yum install -y ntp
+
+// confirm installed successfully
+# rpm -qa |grep ntp
+
+// add ntp server in configuration file 
+# vi /etc/ntp.conf               // add this line "server 3.pool.ntp.org"
+
+# cat /etc/ntp.conf |grep 3.pool    // check if it is found
+
+check ntp status
+# ntpstat
+# systemctl status ntpd
+
+// start ntp
+# systemctl enable ntpd
+# systemctl start  ntpd
+# systemctl status ntpd  // run correct

@@ -1,0 +1,12 @@
+// login to all three server
+$ ssh tony@stapp01 
+$ ssh steve@stapp02
+$ ssh steve@stapp02
+
+// run this command to change do in config file "Remove the “#” and change “yes” to “no” according to image" 
+in this line " # PermitRootLogin yes "
+
+# sudo vi /etc/ssh/sshd_config
+
+// then run this command
+# sudo systemctl restart sshd

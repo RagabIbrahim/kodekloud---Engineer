@@ -1,0 +1,20 @@
+// login to server 3
+$ ssh  banner@stapp03
+$ sudo su -
+
+// install selinux
+# yum -y install selinux*
+
+// check status by this command
+# sestatus
+
+# cat /etc/selinux/config | grep SELINUX
+
+// change "SELINUX=enforcing"  to "SELINUX=disabled"
+# vi /etc/selinux/config
+
+// check changes now
+# cat /etc/selinux/config | grep SELINUX
+
+
+// task done

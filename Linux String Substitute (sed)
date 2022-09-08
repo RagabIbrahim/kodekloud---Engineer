@@ -1,0 +1,19 @@
+// login to server 
+$ ssh tony@stapp01
+$ sudo su -
+
+// check file with word code
+# cat /home/BSD.txt |grep code
+
+// delete word code
+# sed '/\<code\>/d' /home/BSD.txt > /home/BSD_DELETE.txt
+
+// test again
+# cat /home/BSD.txt |grep code
+
+// cat value which going to replace
+# cat /home/BSD.txt |grep or
+
+# sed 's/\bor\b/them/g' /home/BSD.txt > /home/BSD_REPLACE.txt
+
+// task done

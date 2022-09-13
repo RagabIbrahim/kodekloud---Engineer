@@ -1,0 +1,40 @@
+// login to server 3
+$ ssh banner@stapp03
+$ sudo su -
+
+// install httpd package
+# yum install httpd -y
+
+// edit config file to change port to 5002 and add lines at the end of file
+
+Header set X-XSS-Protection "1; mode=block"
+Header always append X-Frame-Options SAMEORIGIN
+Header set X-Content-Type-Options nosniff
+
+#  vi /etc/httpd/conf/httpd.conf 
+
+// check port changed
+# cat /etc/httpd/conf/httpd.conf  |grep Listen
+
+// check header added
+# cat /etc/httpd/conf/httpd.conf  |grep X
+
+// check html file exist or not
+# ll /var/www/html/
+
+// create html file and add this line to it  " Welcome to the xFusionCorp Industries! "
+# vi /var/www/html/index.html
+
+// check content of file
+# cat /var/www/html/index.html
+
+// start httpd
+# systemctl start httpd
+
+// check status 
+# systemctl status  httpd
+
+// validate status of task
+# curl http://localhost:5002
+
+Task Done

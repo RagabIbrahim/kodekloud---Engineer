@@ -1,0 +1,34 @@
+// login to backup server
+$ ssh clint@stbkp01
+$ sudo su -
+
+// check any yum repo
+# yum repolist 
+
+// create repo add these lines
+"
+[repl_local]
+
+name=repl_local
+
+baseurl=file:///packages/downloaded_rpms/
+
+enabled = 1
+
+gpgcheck = 0
+"
+# vi /etc/yum.repos.d/local_yum.repo
+
+// check file data
+# cat /etc/yum.repos.d/local_yum.repo
+
+// check yum list
+# yum repolist
+
+// install wget
+# yum install wget
+
+// check installed
+ # yum list wget
+ 
+ task done

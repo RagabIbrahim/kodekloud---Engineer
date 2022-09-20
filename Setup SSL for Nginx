@@ -1,0 +1,42 @@
+// task on server 3
+$ ssh banner@stapp03
+$ sudo su -
+
+// install epel & nginx
+# yum install   epel-release -y
+# yum install   nginx -y
+
+// run command 
+# vi /etc/nginx/nginx.conf
+// edit config file and add server ip "172.16.238.12" and
+change these two lines of directory
+
+ ssl_certificate "/etc/pki/CA/certs/nautilus.crt";
+ ssl_certificate_key "/etc/pki/CA/private/nautilus.key";
+ 
+ // copy files to new dir
+ # cp /tmp/nautilus.crt /etc/pki/CA/certs/
+ # cp /tmp/nautilus.key /etc/pki/CA/private/
+ 
+ // check if there is files index.html 
+ # ll /usr/share/nginx/html/
+ 
+ // remove it 
+ # rm /usr/share/nginx/html/index.html
+ 
+ // create new one and add text
+ # vi /usr/share/nginx/html/index.html
+ 
+ // check file content
+ # cat /usr/share/nginx/html/index.html
+ 
+ // start nginx
+ # systemctl start nginx
+ 
+ // check status
+ # systemctl status nginx
+ 
+ // access the server to check
+ $ curl -Ik https://stapp03
+ 
+ // task done

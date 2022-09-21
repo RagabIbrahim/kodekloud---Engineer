@@ -1,0 +1,22 @@
+// first login to 3 server
+$ ssh tony@stapp01
+$ ssh steve@stapp02
+$ ssh banner@stapp03
+
+$ sudo su -
+
+// install package
+# yum install tomcat -y
+
+// check package installed
+# ll /etc/logrotate.d/
+
+// check file content
+# cat /etc/logrotate.d/tomcat
+
+// edit file and do changes
+# vi /etc/logrotate.d/tomcat
+
+// start service & check status
+# systemctl start tomcat
+# systemctl status tomcat

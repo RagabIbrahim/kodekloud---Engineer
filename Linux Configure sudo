@@ -1,0 +1,17 @@
+// login to the three servers
+$ ssh tony@stapp01
+$ ssh steve@stapp02
+$ ssh banner@stapp03
+
+
+$ sudo su -
+
+// check jim user exist
+# id jim
+
+// change configuration
+# visudo
+// Add this line at the end of file " jim    ALL=(ALL)   NOPASSWD:ALL "
+
+// check now it should done good
+# su - jim

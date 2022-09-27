@@ -1,0 +1,19 @@
+// Login on storage server & switch to root user 
+$ ssh natasha@ststor01
+$ sudo su -
+
+// go to home
+# cd /home/
+
+//   Import gpg Private & Public key
+# gpg --import public_key.asc
+# gpg --import private_key.asc
+
+// Will encrypt the file txt in to asc in same folder path 
+# gpg --encrypt -r kodekloud@kodekloud.com --armor < encrypt_me.txt  -o encrypted_me.asc
+# gpg --decrypt decrypt_me.asc > decrypted_me.txt
+
+// validate the task
+# cat decrypted_me.txt
+# cat decrypt_me.asc
+

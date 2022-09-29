@@ -1,0 +1,23 @@
+// login to server 1
+$ ssh tony@stapp01
+$ sudo su -
+
+// check status
+# systemctl status httpd
+
+// edit config file
+# vi /etc/httpd/conf/httpd.conf
+// add two lines
+ServerTokens Prod
+ServerSignature Off
+// and change line from ->  Options Indexs FollowSymLinks
+to -> Options FollowSymLinks
+
+// run server
+# systemctl start httpd
+
+// check status
+# systemctl status httpd
+
+// access server now
+# curl -I http://stapp01:8080

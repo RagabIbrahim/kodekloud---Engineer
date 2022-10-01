@@ -1,0 +1,27 @@
+// login to server
+$ ssh tony@stapp01
+
+// create script with the commands below
+$ vi /scripts/beta_backup.sh
+#!/bin/bash
+zip -r /backup/xfusioncorp_beta.zip /var/www/html/beta
+scp /backup/xfusioncorp_beta.zip clint@stbkp01:/backup
+
+$ cat  /scripts/beta_backup.sh
+
+// create generate login with no pass
+$ ssh-keygen
+$ ssh-copy-id clint@stbkp01
+
+// access server
+$ ssh clint@stbkp01
+
+// direct to scripts
+$ cd /scripts
+
+//run script
+$ sh beta_backup.sh
+
+
+ 
+ 

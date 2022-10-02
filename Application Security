@@ -1,0 +1,13 @@
+// login to server
+$ ssh clint@stbkp01
+
+// then run command to allow nginx
+sudo iptables -A INPUT -p tcp --dport 8092 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+
+// reject apache
+sudo iptables -A INPUT -p tcp --dport 6000 -m conntrack --ctstate NEW -j REJECT
+
+// save all changes
+sudo iptables-save > /etc/sysconfig/iptables
+
+cat /etc/sysconfig/iptables

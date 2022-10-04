@@ -1,0 +1,38 @@
+// login to server
+$ ssh tony@stapp01
+
+$ sudo su -
+
+// check port number
+# cat /etc/httpd/conf/httpd.conf |grep Listen
+
+// change port number to 6400
+# vi /etc/httpd/conf/httpd.conf
+
+// change redirect page to urls
+# vi /etc/httpd/conf.d/main.conf
+
+
+<VirtualHost *:6400>
+
+ServerName stapp01.stratos.xfusioncorp.com
+
+Redirect 301 / http://www.stapp01.stratos.xfusioncorp.com:6400/
+
+</VirtualHost>
+
+ 
+
+<VirtualHost *:6400>
+
+ServerName www.stapp02.stratos.xfusioncorp.com:6400/blog/
+
+Redirect 302 /blog/ http://www.stapp02.stratos.xfusioncorp.com:6400/news/
+
+</VirtualHost>
+
+
+// access server now to check
+# curl http://stapp021.stratos.xfusioncorp.com:6400/
+
+// task done

@@ -1,0 +1,10 @@
+// login to server
+$ ssh banner@stapp03
+$ sudo su -
+
+// run command to find the files end with .css  abd copy output to /media
+# find /var/www/html/media -type f -name '*.css' -exec cp --parents {} /media \;
+
+// check now with
+# ll /media
+// task done

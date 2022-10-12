@@ -1,0 +1,84 @@
+$ ssh groot@stmail01
+$ sudo su -
+
+# yum install postfix -y
+
+# yum install dovecot -y
+
+// configure postfix
+# vi /etc/postfix/main.cf
+
+// change from 
+myhostname = virtual.domain.tld
+// to
+myhostname = stmail01.stratos.xfusioncorp.com
+
+// change this
+mydomain = stratos.xfusioncorp.com
+
+myorgin = $mydomain
+
+inet_interfaces = all
+
+mydestination = 
+
+mynetworks = 172.16.238.0/24:
+
+home_mailbox = maildir/
+
+:set nu
+
+// check configure done well or not
+# systemctl start postfix
+
+# useradd jm
+# passwd jim
+
+// check validation
+
+# telnet stmail01 25
+EHLO localhost
+mail from:jim@stratos.xfusioncorp.com
+rcpt to:jim@stratos.xfusioncorp.com
+DATA
+test mail
+.
+quit
+
+// access user jim
+# su - jim
+
+$ mailq
+$ cd Maildir/
+$ exit
+
+// configure dovecot
+# vi /etc/dovecot/dovecot.conf
+
+protocols = 2
+
+# vi /etc/dovecot/conf.d/10-mail.conf
+
+line 24
+
+# vi /etc/dovecot/conf.d/10-auth.conf
+
+line 10, 
+line 100  add beside  plain word "login"
+
+# vi /etc/dovecot/conf.d/10-master.conf
+
+line 91
+user = postfix
+group = postfix
+
+// validate dovecot
+# systemctl start dovecot
+
+// do validation for user
+# telnet stmail01 110
+user ammar
+pass
+retr 1
+.
+quit

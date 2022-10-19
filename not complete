@@ -1,0 +1,33 @@
+$ ssh peter@stdb01
+
+# yum -y install postgresql-server postgresql-contrib
+
+# postgresql-setup initdb
+
+# systemctl enable postgresql
+
+# systemctl start postgresql
+
+# sudo -u postgres psql
+
+# CREATE USER kodekloud_cap WITH PASSWORD 'ksH85UJjhb';
+
+# CREATE DATABASE kodekloud_db3;
+
+# GRANT ALL PRIVILEGES ON DATABASE "kodekloud_db3" to kodekloud_cap;
+
+# \q
+
+# vi /var/lib/pgsql/data/postgresql.conf          // remove # from "listen_addresses = 'localhost'"
+# cat /var/lib/pgsql/data/postgresql.conf |grep localhost
+
+# vi /var/lib/pgsql/data/pg_hba.conf
+# cat /var/lib/pgsql/data/pg_hba.conf |grep md5
+local   all             all             md5                     peer
+# IPv4 local connections:
+host    all             all             127.0.0.1/32   md5      ident
+
+# systemctl restart postgresql
+# systemctl status postgresql
+
+#  psql -U kodekloud_top -d kodekloud_db9 -h 127.0.0.1 -W
